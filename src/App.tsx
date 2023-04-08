@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-// import './App.css'
+import React, {Component} from 'react';
+import GeneralInformation from "./components/GeneralInformation";
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends Component {
 
-  return (
-    <div className="App">
-      <p>Hello World</p>
-    </div>
-  )
+    render() {
+        return (
+            <div style={{display: "flex", flexDirection: 'column'}}>
+                <GeneralInformation syncedCount={469} unsyncedCount={263}/>
+                {/*<Title message={'ss'}></Title>*/}
+            </div>
+        );
+    }
 }
 
-export default App
+export default App;

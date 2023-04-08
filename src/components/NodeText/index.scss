@@ -1,0 +1,31 @@
+.NodeText {
+
+    border: 0.5px white solid;
+    border-radius: 5px;
+
+    padding: 16px;
+    margin-right: 10px;
+
+    width: 60%;
+
+    .Blue {
+        color: #B7C1FC
+    }
+
+    .Green {
+        color: #10B981;
+    }
+
+    .Red {
+        color: #E4665C;
+    }
+
+    .TextNormal {
+        font-size: 20px;
+    }
+
+    .TextStrong {
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
