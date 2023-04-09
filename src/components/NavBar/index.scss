@@ -1,0 +1,10 @@
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 40px 20px;
+}
+
+.Link {
+  font-weight: bold !important;
+}

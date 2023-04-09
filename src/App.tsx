@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import GeneralInformation from "./components/GeneralInformation";
 import RegionalInformation from "./components/RegionalInformation";
 import './types/global.d.ts'
+import NavBar from "./components/NavBar";
 
 class App extends Component {
 
@@ -27,11 +28,15 @@ class App extends Component {
         const nodeRecordsTest = [nodeRecordTest]
 
         return (
-
-            <div style={{display: "flex", flexDirection: 'column'}}>
-                <GeneralInformation syncedCount={469} unsyncedCount={263}/>
-                <RegionalInformation nodeRecords={nodeRecordsTest}/>
-            </div>
+            <>
+                <header>
+                    <NavBar/>
+                </header>
+                <div style={{display: "flex", flexDirection: 'column'}}>
+                    <GeneralInformation syncedCount={469} unsyncedCount={263}/>
+                    <RegionalInformation nodeRecords={nodeRecordsTest}/>
+                </div>
+            </>
         );
     }
 }
