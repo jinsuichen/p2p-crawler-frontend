@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GeneralInformation from "./components/GeneralInformation";
+import RegionalInformation from "./components/RegionalInformation";
 
 class App extends Component {
 
@@ -7,7 +8,7 @@ class App extends Component {
         return (
             <div style={{display: "flex", flexDirection: 'column'}}>
                 <GeneralInformation syncedCount={469} unsyncedCount={263}/>
-                {/*<Title message={'ss'}></Title>*/}
+                <RegionalInformation countryCount={92}/>
             </div>
         );
     }

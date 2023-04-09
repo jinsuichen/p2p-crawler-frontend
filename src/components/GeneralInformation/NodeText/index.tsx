@@ -17,22 +17,22 @@ class NodeText extends Component<Props> {
         return (
             <div className={'NodeText'}>
                 <div className={'Blue'}>
-                    <p className={'TextNormal'}>Node count</p>
-                    <p className={'TextStrong'}>{totalCount}</p>
+                    <p className={'NodeTextNormal'}>Node count</p>
+                    <p className={'NodeTextStrong'}>{totalCount}</p>
                 </div>
 
                 <br/><br/>
 
                 <div className={'Green'}>
-                    <p className={'TextNormal'}>Percentage of network synced</p>
-                    <p className={'TextStrong'}>{syncedRate}%</p>
+                    <p className={'NodeTextNormal'}>Percentage of network synced</p>
+                    <p className={'NodeTextStrong'}>{syncedRate}%</p>
                 </div>
 
                 <br/><br/>
 
                 <div className={'Red'}>
-                    <p className={'TextNormal'}>Percentage of network unsynced</p>
-                    <p className={'TextStrong'}>{unsyncedRate}%</p>
+                    <p className={'NodeTextNormal'}>Percentage of network unsynced</p>
+                    <p className={'NodeTextStrong'}>{unsyncedRate}%</p>
                 </div>
 
             </div>

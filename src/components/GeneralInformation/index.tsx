@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Title from "../Title";
-import NodeText from "../NodeText";
-import NodeChart from "../NodeChart";
+import NodeText from "./NodeText";
+import NodeChart from "./NodeChart";
 
 type Props = {
     syncedCount: number
