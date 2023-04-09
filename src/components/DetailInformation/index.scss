@@ -1,0 +1,29 @@
+.DetailInformation {
+  border: 0.5px white solid;
+  border-radius: 5px;
+
+  padding: 16px;
+  margin: 0 auto 0;
+
+  width: calc(100% - 30px);
+
+  height: 1000px;
+
+}
+
+.DetailInformation * {
+  color: white !important;
+}
+
+//.MuiTablePagination-select {
+//  color: white !important;
+//}
+//.MuiTablePagination-displayedRows {
+//  color: white !important;
+//}
+//.MuiTablePagination-selectLabel {
+//  color: white !important;
+//}
+//.MuiSvgIcon-root {
+//  color: white !important;
+//}
