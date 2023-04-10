@@ -3,11 +3,14 @@ import './index.scss'
 
 type Props = {
     countryCount: number
+    top5Countries: [string, number][]
 }
 
 class CountryText extends Component<Props> {
     render() {
-        const {countryCount} = this.props
+
+        const {countryCount, top5Countries} = this.props
+
         return (
             <div className={'CountryText'}>
                 <div>
@@ -20,26 +23,12 @@ class CountryText extends Component<Props> {
                 <div>
                     <p className={'CountryTextNormal'}>Top 5 countries</p>
                     <ul className={'CountryList'}>
-                        <li className={'CountryListItem'}>
-                            <span>1. China</span>
-                            <span>5463(24.4%)</span>
-                        </li>
-                        <li className={'CountryListItem'}>
-                            <span>2. China</span>
-                            <span>5463(24.4%)</span>
-                        </li>
-                        <li className={'CountryListItem'}>
-                            <span>3. China</span>
-                            <span>5463(24.4%)</span>
-                        </li>
-                        <li className={'CountryListItem'}>
-                            <span>4. China</span>
-                            <span>5463(24.4%)</span>
-                        </li>
-                        <li className={'CountryListItem'}>
-                            <span>5. China</span>
-                            <span>5463(24.4%)</span>
-                        </li>
+                        {top5Countries.map((value, index) => (
+                            <li className={'CountryListItem'}>
+                                <span>{index + 1}. {value[0]}</span>
+                                <span>{value[1]}({(value[1] / countryCount * 100).toFixed(2)}%)</span>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 

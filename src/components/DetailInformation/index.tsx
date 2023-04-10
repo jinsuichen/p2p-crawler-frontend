@@ -20,8 +20,9 @@ class DetailInformation extends Component<Props> {
             {field: 'os', headerName: 'OS', width: 150},
         ];
 
-        console.log(this.props.nodeRecords)
+        const {nodeRecords} = this.props
 
+        console.log(nodeRecords)
 
         return (
             <div style={{margin: "0 auto 0", width: '65%'}}>
@@ -29,7 +30,8 @@ class DetailInformation extends Component<Props> {
                 <div className={'DetailInformation'}>
                     <DataGrid
                         style={{paddingLeft: '20px'}}
-                        rows={this.props.nodeRecords}
+                        rows={nodeRecords}
+                        getRowId={(row) => row.id}
                         columns={columns}
                         pageSizeOptions={[25, 100]}
                     />

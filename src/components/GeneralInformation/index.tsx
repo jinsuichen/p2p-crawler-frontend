@@ -4,15 +4,18 @@ import NodeText from "./NodeText";
 import NodeChart from "./NodeChart";
 
 type Props = {
-    syncedCount: number
-    unsyncedCount: number
+    nodeRecords: Array<NodeRecord>
 }
 
 class GeneralInformation extends Component<Props> {
 
     render() {
 
-        let {syncedCount, unsyncedCount} = this.props
+        const {nodeRecords} = this.props
+
+        const totalCount = nodeRecords.length
+        const syncedCount = Math.floor(totalCount * 0.67)
+        const unsyncedCount = totalCount - syncedCount
 
         return (
             <div style={{margin: "0 auto 0", width: '65%'}}>

@@ -11,7 +11,7 @@ class ClientChart extends Component<Props> {
 
         const {nodeRecords} = this.props
 
-        const keys = ['lighthouse', 'prysm', 'teku', 'others']
+        const keys = ['geth', 'erigon', 'nethermind', 'others']
         const map = new Map()
         keys.forEach(item => map.set(item, 0))
 

@@ -6,32 +6,42 @@ import NavBar from "./components/NavBar";
 import DetailInformation from "./components/DetailInformation";
 import StatisticsInformation from "./components/StatisticsInformation";
 import Footer from "./components/Footer";
+import api from './services/axios'
 
-class App extends Component {
+type Props = {}
+
+type State = {
+    nodeRecords: Array<NodeRecord>
+}
+
+class App extends Component<Props, State> {
+
+    constructor(props: Props) {
+        super(props);
+
+        this.state = {
+            nodeRecords: []
+        };
+
+    }
+
+
+    async componentDidMount() {
+
+        try {
+            const response = await api.get("/nodeRecords");
+            this.setState({
+                nodeRecords: response.data
+            })
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
 
     render() {
 
-
-        const nodeRecordsTest = []
-        for (let i = 0; i < 400; i++) {
-            const nodeRecordTest: NodeRecord = {
-                id: '000021e866f29b45029cb2f787844567225fa4f75bdd872028b48297e2496b1d5d681f9945f6c1157806da5ae6dc086bee3ed057d30a097a91bde4fcaf6c35b1' + i,
-                seq: 1,
-                accessTime: '2023-04-06 17:08:04',
-                address: '34.228.185.198',
-                connectAble: true,
-                neighborCount: 1,
-                country: 'China',
-                city: '1',
-                clients: 'nethermind',
-                os: 'linux',
-                clientsRuntime: '1',
-                networkID: 1,
-                totalDifficulty: '1',
-                headHash: '1',
-            }
-            nodeRecordsTest.push(nodeRecordTest)
-        }
+        const {nodeRecords} = this.state
 
         return (
             <>
@@ -39,10 +49,10 @@ class App extends Component {
                     <NavBar/>
                 </header>
                 <div style={{display: "flex", flexDirection: 'column'}}>
-                    <GeneralInformation syncedCount={469} unsyncedCount={263}/>
-                    <RegionalInformation nodeRecords={nodeRecordsTest}/>
-                    <StatisticsInformation nodeRecords={nodeRecordsTest}/>
-                    <DetailInformation nodeRecords={nodeRecordsTest}/>
+                    <GeneralInformation nodeRecords={nodeRecords}/>
+                    <RegionalInformation nodeRecords={nodeRecords}/>
+                    <StatisticsInformation nodeRecords={nodeRecords}/>
+                    <DetailInformation nodeRecords={nodeRecords}/>
                 </div>
                 <footer>
                     <Footer/>

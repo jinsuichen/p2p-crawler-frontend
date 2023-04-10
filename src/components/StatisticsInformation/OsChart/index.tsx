@@ -15,7 +15,7 @@ class OsChart extends Component<Props> {
         keys.forEach(item => map.set(item, 0))
 
         nodeRecords.forEach(item => {
-            let index = keys.indexOf(item.clients)
+            let index = keys.indexOf(item.os)
             if(index == -1) index = keys.length - 1
 
             const key = keys[index]
