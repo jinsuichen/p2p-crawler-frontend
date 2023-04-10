@@ -5,6 +5,7 @@ import './types/global.d.ts'
 import NavBar from "./components/NavBar";
 import DetailInformation from "./components/DetailInformation";
 import StatisticsInformation from "./components/StatisticsInformation";
+import Footer from "./components/Footer";
 
 class App extends Component {
 
@@ -43,6 +44,9 @@ class App extends Component {
                     <StatisticsInformation nodeRecords={nodeRecordsTest}/>
                     <DetailInformation nodeRecords={nodeRecordsTest}/>
                 </div>
+                <footer>
+                    <Footer/>
+                </footer>
             </>
         );
     }
