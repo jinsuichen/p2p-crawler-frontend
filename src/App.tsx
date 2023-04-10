@@ -4,6 +4,7 @@ import RegionalInformation from "./components/RegionalInformation";
 import './types/global.d.ts'
 import NavBar from "./components/NavBar";
 import DetailInformation from "./components/DetailInformation";
+import StatisticsInformation from "./components/StatisticsInformation";
 
 class App extends Component {
 
@@ -39,6 +40,7 @@ class App extends Component {
                 <div style={{display: "flex", flexDirection: 'column'}}>
                     <GeneralInformation syncedCount={469} unsyncedCount={263}/>
                     <RegionalInformation nodeRecords={nodeRecordsTest}/>
+                    <StatisticsInformation nodeRecords={nodeRecordsTest}/>
                     <DetailInformation nodeRecords={nodeRecordsTest}/>
                 </div>
             </>
