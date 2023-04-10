@@ -35,7 +35,7 @@ class RegionalInformation extends Component<Props> {
             <div style={{margin: "0 auto 0", width: '65%'}}>
                 <Title message={'Regional Information'}/>
                 <div style={{display: 'flex'}}>
-                    <CountryText countryCount={countryCount} top5Countries={topFive}/>
+                    <CountryText countryCount={countryCount} top5Countries={topFive} nodeCount={nodeRecords.length}/>
                     <CountryChart nodeRecords={nodeRecords}/>
                 </div>
             </div>
