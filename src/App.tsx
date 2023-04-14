@@ -33,8 +33,14 @@ class App extends Component<Props, State> {
         try {
             const response = await api.get("/nodeRecords");
             const recordsCount = await api.get("/allRecords");
+            let nodeRecords = response.data
+            nodeRecords.forEach((item: NodeRecord) => {
+                if (item.country === 'United States') {
+                    item.country = 'United States of America'
+                }
+            })
             this.setState({
-                nodeRecords: response.data,
+                nodeRecords: nodeRecords,
                 recordsCount: recordsCount.data
             })
         } catch (error) {
@@ -45,7 +51,7 @@ class App extends Component<Props, State> {
 
     render() {
 
-        const {nodeRecords,recordsCount} = this.state
+        const {nodeRecords, recordsCount} = this.state
 
         return (
             <>
