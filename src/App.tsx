@@ -12,6 +12,7 @@ type Props = {}
 
 type State = {
     nodeRecords: Array<NodeRecord>
+    recordsCount: number
 }
 
 class App extends Component<Props, State> {
@@ -20,7 +21,8 @@ class App extends Component<Props, State> {
         super(props);
 
         this.state = {
-            nodeRecords: []
+            nodeRecords: [],
+            recordsCount: 0,
         };
 
     }
@@ -30,8 +32,10 @@ class App extends Component<Props, State> {
 
         try {
             const response = await api.get("/nodeRecords");
+            const recordsCount = await api.get("/allRecords");
             this.setState({
-                nodeRecords: response.data
+                nodeRecords: response.data,
+                recordsCount: recordsCount.data
             })
         } catch (error) {
             console.error(error);
@@ -41,7 +45,7 @@ class App extends Component<Props, State> {
 
     render() {
 
-        const {nodeRecords} = this.state
+        const {nodeRecords,recordsCount} = this.state
 
         return (
             <>
@@ -49,7 +53,7 @@ class App extends Component<Props, State> {
                     <NavBar/>
                 </header>
                 <div style={{display: "flex", flexDirection: 'column'}}>
-                    <GeneralInformation nodeRecords={nodeRecords}/>
+                    <GeneralInformation nodeRecords={nodeRecords} recordsCount={recordsCount}/>
                     <RegionalInformation nodeRecords={nodeRecords}/>
                     <StatisticsInformation nodeRecords={nodeRecords}/>
                     <DetailInformation nodeRecords={nodeRecords}/>
