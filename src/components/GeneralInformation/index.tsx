@@ -15,6 +15,7 @@ class GeneralInformation extends Component<Props> {
         const {nodeRecords,recordsCount} = this.props
 
         const totalCount = nodeRecords.length
+        //TODO: Caclulate the syncedCount and unsyncedCount base on access time
         const syncedCount = Math.floor(totalCount * 0.64)
         const unsyncedCount = totalCount - syncedCount
 
