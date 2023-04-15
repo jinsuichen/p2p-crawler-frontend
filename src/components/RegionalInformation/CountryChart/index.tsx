@@ -42,7 +42,6 @@ class ContourMap extends Component<Props, States> {
     getColor(country: string) {
 
         const {nodeRecords} = this.props
-
         const d = nodeRecords.filter(item => {
             return item.country === country
         }).length
